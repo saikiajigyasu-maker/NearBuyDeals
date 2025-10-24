@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food & Drinks Deals</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <style>
+    .distance-badge {
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen p-6">
+
+  <h1 class="text-2xl font-bold text-gray-800 mb-6">🍽️ Food & Drinks Near You</h1>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- Card 1: Veg Combo -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden item-card transition-all duration-300 hover:scale-105">
+      <div class="relative overflow-hidden h-48">
+        <span class="distance-badge bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">0.9km</span>
+        <img src="https://th.bing.com/th/id/OIP.jb3iZJp5rL7YxvJgJQh0_wHaE7?w=300&h=200"
+             alt="Veg thali combo"
+             class="w-full h-full object-cover item-image transition-transform duration-300 hover:scale-110">
+      </div>
+      <div class="p-4">
+        <h3 class="text-lg font-semibold text-gray-900">Veg Thali Combo</h3>
+        <p class="text-gray-600 text-sm mt-1">Roti, dal, sabzi, salad — fresh & homely</p>
+        <div class="mt-3 flex items-center">
+          <img class="h-8 w-8 rounded-full" src="http://static.photos/people/200x200/21" alt="Shop">
+          <div class="ml-2">
+            <p class="text-sm font-medium text-gray-900">Annapurna Kitchen</p>
+            <div class="flex items-center">
+              <div class="flex items-center text-yellow-400">
+                <i data-feather="star" class="h-3 w-3 fill-current"></i>
+                <i data-feather="star" class="h-3 w-3 fill-current"></i>
+                <i data-feather="star" class="h-3 w-3 fill-current"></i>
+                <i data-feather="star" class="h-3 w-3 fill-current"></i>
+                <i data-feather="star" class="h-3 w-3"></i>
+              </div>
+              <span class="text-xs text-gray-500 ml-1">(154)</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 flex justify-between items-center">
+          <span class="text-lg font-bold text-indigo-600">220 INR</span>
+          <button class="px-3 py-1 bg-indigo-600 text-white rounded-md text-sm hover:bg-indigo-700">View Deal</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Cold Coffee -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden item-card transition-all duration-300 hover:scale-105">
+      <div class="relative overflow-hidden h-48">
+        <span class="distance-badge bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">1.4km</span>
+        <img src="https://th.bing.com/th/id/OIP.6I1sQOq0m2KJb3fQbqfF3QHaE8?w=300&h=200"
+             alt="Cold coffee"
+             class="w-full h-full object-cover item-image transition-transform duration-300 hover:scale-110">
+      </div>
+      <div class="p-4">
+        <h3 class="text-lg font-semibold text-gray-900">Cold Coffee (Large)</h3>
+        <p class="text-gray-600 text-sm mt-1">Rich, creamy, with Belgian chocolate drizzle</p>
+        <div class="mt-3 flex items-center">
+          <img class="h-8 w-8 rounded-full" src="http://static.photos/people/200x200/29" alt="Shop">
+          <div class="ml-2">
+            <p class="text-sm font-medium text-gray-900">Bean & Brew Cafe</p>
+            <div class="flex items-center">
+              <div class="flex items-center text-yellow-400">
+                <i data-feather="star" class="h-3 w-3 fill-current"></i>
+                <i data-feather="star" class="h-3 w-3 fill-current"></i>
+                <i data-feather="star" class="h-3 w-3 fill-current"></i>
+                <i data-feather="star" class="h-3 w-3"></i>
+                <i data-feather="star" class="h-3 w-3"></i>
+              </div>
+              <span class="text-xs text-gray-500 ml-1">(89)</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 flex justify-between items-center">
+          <span class="text-lg font-bold text-indigo-600">169 INR</span>
+          <button class="px-3 py-1 bg-indigo-600 text-white rounded-md text-sm hover:bg-indigo-700">View Deal</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Momos -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden item-card transition-all duration-300 hover:scale-105">
+      <div class="relative overflow-hidden h-48">
+        <span class="distance-badge bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">0.6km</span>
+        <img src="https://th.bing.com/th/id/OIP.tXoKpZb3sKp7gT6oK1YkGQHaE8?w=300&h=200"
+             alt="Steamed momos"
+             class="w-full h-full object-cover item-image transition-transform duration-300 hover:scale-110">
+      </div>
+      <div class="p-4">
+        <h3 class="text-lg font-semibold text-gray-900">Steamed Veg Momos (10 pcs)</h3>
+        <p class="text-gray-600 text-sm mt-1">Served with spicy chutney</p>
+        <div class="mt-3 flex items-center">
+          <img class="h-8 w-8 rounded-full" src="http://static.photos/people/200x200/33" alt="Shop">
+          <div class="ml-2">
+            <p class="text-sm font-medium text-gray-900">Tibet Treats</p>
+            <div class="flex items-center">
+              <div class="flex items-center text-yellow-400">
+                <i data-feather="star" class="h-3 w-3 fill-current"></i>
+                <i data-feather="star" class="h-3 w-3 fill-current"></i>
+                <i data-feather="star" class="h-3 w-3 fill-current"></i>
+                <i data-feather="star" class="h-3 w-3 fill-current"></i>
+                <i data-feather="star" class="h-3 w-3"></i>
+              </div>
+              <span class="text-xs text-gray-500 ml-1">(203)</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 flex justify-between items-center">
+          <span class="text-lg font-bold text-indigo-600">149 INR</span>
+          <button class="px-3 py-1 bg-indigo-600 text-white rounded-md text-sm hover:bg-indigo-700">View Deal</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: Fresh Juice -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden item-card transition-all duration-300 hover:scale-105">
+      <div class="relative overflow-hidden h-48">
+        <span class="distance-badge bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">2.1km</span>
+        <img src="https://th.bing.com/th/id/OIP.Xp6k6rQyA2FqvXx2k9oJ2AHaE8?w=300&h=200"
+             alt="Mixed fruit juice"
+             class="w-full h-full object-cover item-image transition-transform duration-300 hover:scale-110">
+      </div>
+      <div class="p-4">
+        <h3 class="text-lg font-semibold text-gray-900">Mixed Fruit Juice (500 ml)</h3>
+        <p class="text-gray-600 text-sm mt-1">No added sugar, served chilled</p>
+        <div class="mt-3 flex items-center">
+          <img class="h-8 w-8 rounded-full" src="http://static.photos/people/200x200/41" alt="Shop">
+          <div class="ml-2">
+            <p class="text-sm font-medium text-gray-900">Fresh Squeeze Bar</p>
+            <div class="flex items-center">
+              <div class="flex items-center text-yellow-400">
+                <i data-feather="star" class="h-3 w-3 fill-current"></i>
+                <i data-feather="star" class="h-3 w-3 fill-current"></i>
+                <i data-feather="star" class="h-3 w-3 fill-current"></i>
+                <i data-feather="star" class="h-3 w-3"></i>
+                <i data-feather="star" class="h-3 w-3"></i>
+              </div>
+              <span class="text-xs text-gray-500 ml-1">(76)</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 flex justify-between items-center">
+          <span class="text-lg font-bold text-indigo-600">120 INR</span>
+          <button class="px-3 py-1 bg-indigo-600 text-white rounded-md text-sm hover:bg-indigo-700">View Deal</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5: Paneer Tikka -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden item-card transition-all duration-300 hover:scale-105">
+      <div class="relative overflow-hidden h-48">
+        <span class="distance-badge bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">3.0km</span>
+        <img src="https://th.bing.com/th/id/OIP.EbqfO3xw7oFjFvJQFfKawQHaE8?w=300&h=200"
+             alt="Paneer tikka"
+             class="w-full h-full object-cover item-image transition-transform duration-300 hover:scale-110">
+      </div>
+      <div class="p-4">
+        <h3 class="text-lg font-semibold text-gray-900">Paneer Tikka Platter</h3>
+        <p class="text-gray-600 text-sm mt-1">Smoky, marinated, with mint dip</p>
+        <div class="mt-3 flex items-center">
+          <img class="h-8 w-8 rounded-full" src="http://static.photos/people/200x200/53" alt="Shop">
+          <div class="ml-2">
+            <p class="text-sm font-medium text-gray-900">Spice Route Grill</p>
+            <div class="flex items-center">
+              <div class="flex items-center text-yellow-400">
+                <i data-feather="star" class="h-3 w-3 fill-current"></i>
+                <i data-feather="star" class="h-3 w-3 fill-current"></i>
+                <i data-feather="star" class="h-3 w-3 fill-current"></i>
+                <i data-feather="star" class="h-3 w-3 fill-current"></i>
+                <i data-feather="star" class="h-3 w-3 fill-current"></i>
+              </div>
+              <span class="text-xs text-gray-500 ml-1">(312)</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 flex justify-between items-center">
+          <span class="text-lg font-bold text-indigo-600">299 INR</span>
+          <button class="px-3 py-1 bg-indigo-600 text-white rounded-md text-sm hover:bg-indigo-700">View Deal</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6: Lassi -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden item-card transition-all duration-300 hover:scale-105">
+      <div class="relative overflow-hidden h-48">
+        <span class="distance-badge bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">1.2km</span>
+        <img src="https://th.bing.com/th/id/OIP.fyO5m7mZqJp2qXrGdV2vkgHaE8?w=300&h=200"
+             alt="Mango lassi"
+             class="w-full h-full object-cover item-image transition-transform duration-300 hover:scale-110">
+      </div>
+      <div class="p-4">
+        <h3 class="text-lg font-semibold text-gray-900">Mango Lassi (400 ml)</h3>
+        <p class="text-gray-600 text-sm mt-1">Thick, sweet, with cardamom</p>
+        <div class="mt-3 flex items-center">
+          <img class="h-8 w-8 rounded-full" src="http://static.photos/people/200x200/61" alt="Shop">
+          <div class="ml-2">
+            <p class="text-sm font-medium text-gray-900">Punjab Dairy Bar</p>
+            <div class="flex items-center">
+              <div class="flex items-center text-yellow-400">
+                <i data-feather="star" class="h-3 w-3 fill-current"></i>
+                <i data-feather="star" class="h-3 w-3 fill-current"></i>
+                <i data-feather="star" class="h-3 w-3"></i>
+                <i data-feather="star" class="h-3 w-3"></i>
+                <i data-feather="star" class="h-3 w-3"></i>
+              </div>
+              <span class="text-xs text-gray-500 ml-1">(41)</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 flex justify-between items-center">
+          <span class="text-lg font-bold text-indigo-600">99 INR</span>
+          <button class="px-3 py-1 bg-indigo-600 text-white rounded-md text-sm hover:bg-indigo-700">View Deal</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    feather.replace();
+  </script>
+</body>
+</html>

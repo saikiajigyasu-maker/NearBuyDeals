@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Saved Items - NearBuy Deals</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #2a2e35;
+      --muted: #6b7280;
+      --primary: #1e88e5;
+      --primary-dark: #1769aa;
+      --border: #e5e7eb;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.25rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .brand .dot {
+      width: 10px;
+      height: 10px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    main {
+      flex: 1;
+      display: grid;
+      place-items: center;
+      padding: 2rem 1rem;
+    }
+
+    .empty-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .icon-wrap {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 1rem;
+      border-radius: 14px;
+      background: #e9f2fc;
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+    }
+
+    .empty-card h1 {
+      font-size: 1.4rem;
+      margin: 0.25rem 0 0.5rem;
+    }
+
+    .empty-card p {
+      margin: 0.25rem 0 1.25rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .actions {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      appearance: none;
+      border: 1px solid var(--primary);
+      background: var(--primary);
+      color: #fff;
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.08s ease;
+    }
+    .btn:hover { background: var(--primary-dark); }
+    .btn:active { transform: translateY(1px); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+    .btn-outline:hover {
+      background: #e9f2fc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Optional message variants */
+    .small-note {
+      margin-top: 1rem;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <span class="dot"></span>
+      NearBuy Deals
+    </div>
+  </header>
+
+  <main>
+    <section class="empty-card" aria-live="polite">
+      <div class="icon-wrap" aria-hidden="true">
+        <!-- Bookmark icon (SVG) -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M6 2h12a1 1 0 0 1 1 1v18.382a1 1 0 0 1-1.555.832L12 18.5l-5.445 3.714A1 1 0 0 1 5 21.382V3a1 1 0 0 1 1-1z"/>
+        </svg>
+      </div>
+
+      <h1>You have no saved items</h1>
+      <p>Looks like you haven’t saved any deals yet. Explore nearby offers and tap the bookmark to keep them here.</p>
+
+      <div class="actions">
+        <a class="btn" href="viewdeals.htm">Browse deals</a>
+        <a class="btn btn-outline" href="/categories">View categories</a>
+      </div>
+
+      <div class="small-note">
+        Tip: Saving items lets you compare prices later and get reminders before deals expire.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 NearBuy Deals — Empowering local shops and smart savings.
+  </footer>
+</body>
+</html>
+```
