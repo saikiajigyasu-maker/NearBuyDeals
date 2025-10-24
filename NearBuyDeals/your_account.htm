@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Account — NearBuy Deals</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Navbar -->
+  <header class="bg-white border-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <div class="flex items-center space-x-3">
+        <div class="h-9 w-9 rounded-md bg-indigo-600 flex items-center justify-center text-white font-bold">ND</div>
+        <span class="font-semibold text-lg">NearBuyDeals</span>
+      </div>
+      <nav class="flex items-center space-x-6">
+        <a href="index.htm" class="text-gray-700 hover:text-indigo-600">Home</a>
+        <a href="viewdeals.htm" class="text-gray-700 hover:text-indigo-600">All Deals</a>
+        <a href="massage.htm" class="text-gray-700 hover:text-indigo-600">Messages</a>
+        <a href="saved.htm" class="text-gray-700 hover:text-indigo-600">Saved Items</a>
+        <a href="account.htm" id="accountLink" class="text-indigo-600 font-medium border-b-2 border-indigo-600">Your Account</a>
+        <a href="login.htm" id="loginLink" class="text-gray-700 hover:text-indigo-600">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+      <!-- Sidebar -->
+      <aside class="lg:col-span-1">
+        <div class="bg-white border rounded-lg p-6">
+          <div class="flex items-center space-x-4">
+            <img id="profilePhoto" src="https://via.placeholder.com/80" alt="Profile"
+                 class="h-16 w-16 rounded-full object-cover" />
+            <div>
+              <h3 id="userName" class="font-semibold">XYZ</h3>
+              <p id="userEmail" class="text-sm text-gray-500">XYZ@example.com</p>
+            </div>
+          </div>
+          <a href="edit_profile.htm"
+   class="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">
+  Edit Profile
+</a>
+
+          <div class="mt-6">
+            <ul id="accountMenu" class="space-y-1">
+
+             <a href="index.htm" class="tab-link flex items-center justify-between px-3 py-2 rounded-md cursor-pointer bg-indigo-50 text-indigo-700 hover:bg-indigo-100"> Overview        Home</a>
+
+              <li data-tab="myDeals" class="tab-link px-3 py-2 rounded-md cursor-pointer hover:bg-gray-100">My Deals</li>
+              <li data-tab="addItem" class="tab-link px-3 py-2 rounded-md cursor-pointer hover:bg-gray-100">Add Item</li>
+              <li data-tab="saved" class="tab-link px-3 py-2 rounded-md cursor-pointer hover:bg-gray-100">Saved Items</li>
+              <li data-tab="messages" class="tab-link px-3 py-2 rounded-md cursor-pointer hover:bg-gray-100">Messages</li>
+              <li data-tab="settings" class="tab-link px-3 py-2 rounded-md cursor-pointer hover:bg-gray-100">Settings</li>
+              <li data-tab="logout" class="tab-link px-3 py-2 rounded-md cursor-pointer hover:bg-gray-100">Logout</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Content -->
+      <section class="lg:col-span-3">
+        <div class="bg-white border rounded-lg p-6">
+          <!-- Overview -->
+          <div id="overview" class="tab-content">
+            <h2 class="text-xl font-semibold">Account overview</h2>
+            <p class="mt-2 text-gray-600">Welcome back, <span id="overviewName">XYZ</span>. Here’s your activity.</p>
+            <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div class="rounded-lg border p-4">
+                <p class="text-sm text-gray-500">Deals posted</p>
+                <p id="statDeals" class="mt-1 text-2xl font-semibold">0</p>
+              </div>
+              <div class="rounded-lg border p-4">
+                <p class="text-sm text-gray-500">Saved items</p>
+                <p id="statSaved" class="mt-1 text-2xl font-semibold">0</p>
+              </div>
+              <div class="rounded-lg border p-4">
+                <p class="text-sm text-gray-500">Messages</p>
+                <p id="statMessages" class="mt-1 text-2xl font-semibold">0</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- My Deals -->
+          <div id="myDeals" class="tab-content hidden">
+            <div class="flex items-center justify-between">
+              <h2 class="text-xl font-semibold">My deals</h2>
+              <a href="#addItem" data-tab="addItem"
+                 class="tab-link inline-flex items-center px-3 py-2 text-sm font-medium text-indigo-600 hover:text-indigo-700">
+                + Add item
+              </a>
+            </div>
+            <p class="mt-2 text-gray-600">Your posted items appear here.</p>
+            <div id="myDealsGrid" class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <!-- cards injected here -->
+            </div>
+            <div id="myDealsEmpty" class="mt-8 rounded-lg border border-dashed p-8 text-center text-gray-500">
+              No deals yet. Click “Add item” to post your first deal.
+            </div>
+          </div>
+
+          <!-- Add Item -->
+          <div id="addItem" class="tab-content hidden">
+            <h2 class="text-xl font-semibold">Add item</h2>
+            <p class="mt-2 text-gray-600">Fill the details below. Items will appear in My Deals and All Deals.</p>
+
+            <form id="addItemForm" class="mt-6 space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700">Item name</label>
+                  <input id="itemName" type="text" required
+                         class="mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-600 focus:ring-indigo-600" />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700">Quality / condition</label>
+                  <input id="itemQuality" type="text" required
+                         class="mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-600 focus:ring-indigo-600" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700">Properties (e.g., 1L, pack of 10)</label>
+                  <input id="itemProperties" type="text" required
+                         class="mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-600 focus:ring-indigo-600" />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700">Price (INR)</label>
+                  <input id="itemPrice" type="number" min="0" required
+                         class="mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-600 focus:ring-indigo-600" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700">Shop name</label>
+                  <input id="shopName" type="text" required
+                         class="mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-600 focus:ring-indigo-600" />
+                </div>
+              
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700">Photo</label>
+                <input id="itemPhoto" type="file" accept="image/*" required
+                       class="mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-600 focus:ring-indigo-600" />
+                <div id="photoPreview" class="mt-3 hidden">
+                  <img id="photoPreviewImg" src="" alt="Preview"
+                       class="h-40 w-full object-cover rounded-md border" />
+                </div>
+              </div>
+
+              <div class="flex items-center justify-end space-x-3">
+                <button type="button" id="resetFormBtn"
+                        class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 border rounded-md">
+                  Reset
+                </button>
+                <button type="submit"
+                        class="px-4 py-2 text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-md">
+                  Save item
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Saved -->
+          <div id="saved" class="tab-content hidden">
+            <h2 class="text-xl font-semibold">Saved items</h2>
+            <p class="mt-2 text-gray-600">You haven’t saved anything yet.</p>
+          </div>
+
+          <!-- Messages -->
+          <div id="messages" class="tab-content hidden">
+            <h2 class="text-xl font-semibold">Messages</h2>
+            <p class="mt-2 text-gray-600">No new messages.</p>
+          </div>
+
+          <!-- Settings -->
+          <div id="settings" class="tab-content hidden">
+            <h2 class="text-xl font-semibold">Settings</h2>
+            <form id="settingsForm" class="mt-4 space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700">Name</label>
+                  <input id="settingsName" type="text" value="John Doe"
+                         class="mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-600 focus:ring-indigo-600" />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700">Email</label>
+                  <input id="settingsEmail" type="email" value="johndoe@example.com"
+                         class="mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-600 focus:ring-indigo-600" />
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700">Password</label>
+                <input id="settingsPassword" type="password" placeholder="••••••••"
+                       class="mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-600 focus:ring-indigo-600" />
+              </div>
+              <div class="flex items-center justify-end">
+                <button type="submit"
+                        class="px-4 py-2 text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-md">
+                  Save changes
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Logout -->
+          <div id="logout" class="tab-content hidden">
+            <h2 class="text-xl font-semibold">Logout</h2>
+            <p class="mt-2 text-gray-600">You’ll be returned to Home and Account will be hidden.</p>
+            <div class="mt-4 flex items-center space-x-3">
+              <button id="confirmLogout"
+                      class="px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-md">
+                Yes, logout
+              </button>
+              <button data-tab="overview"
+                      class="tab-link px-4 py-2 text-sm font-medium border rounded-md hover:bg-gray-50">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-10 border-t">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-sm text-gray-600">
+      © 2025 NearBuyDeals. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="account.js"></script>
+</body>
+</html>
