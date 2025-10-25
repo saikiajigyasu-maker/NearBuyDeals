@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - NearBuy Deals</title>
+  <title>Re-Login - NearBuy Deals</title>
   <style>
     body {
       font-family: "Segoe UI", Arial, sans-serif;
@@ -102,8 +102,8 @@
 </head>
 <body>
   <div class="login-container">
-    <h2>Login</h2>
-    <form id="loginForm" action="/login" method="POST" novalidate>
+    <h2>Re-Login</h2>
+    <form id="reloginForm" novalidate>
       <div class="form-group">
         <label for="email">Email</label>
         <input type="email" id="email" name="email" required>
@@ -118,18 +118,17 @@
 
       <button type="submit" class="btn">Login</button>
     </form>
-
-    </div>
   </div>
 
   <script>
-    const form = document.getElementById('loginForm');
+    const form = document.getElementById('reloginForm');
     const email = document.getElementById('email');
     const password = document.getElementById('password');
     const emailError = document.getElementById('emailError');
     const passwordError = document.getElementById('passwordError');
 
     form.addEventListener('submit', function(e) {
+      e.preventDefault(); // stop default form submission
       let valid = true;
 
       // Email validation
@@ -147,10 +146,10 @@
       } else {
         passwordError.style.display = 'none';
       }
-     
 
-      if (!valid) {
-        e.preventDefault(); // Stop form submission
+      // If valid → redirect to index.htm
+      if (valid) {
+        window.location.href = "index.htm";
       }
     });
   </script>
