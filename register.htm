@@ -130,7 +130,7 @@
     <!-- Form Section -->
     <div class="form-section">
       <h2>Create Account</h2>
-      <form id="registerForm" action="/register" method="POST" novalidate>
+      <form id="registerForm" novalidate>
         <div class="form-group">
           <label for="name">Full Name</label>
           <input type="text" id="name" name="name" required>
@@ -177,6 +177,7 @@
     const confirmPasswordError = document.getElementById('confirmPasswordError');
 
     form.addEventListener('submit', function(e) {
+      e.preventDefault(); // stop default form submission
       let valid = true;
 
       if (!name.value.trim()) {
@@ -200,16 +201,16 @@
         passwordError.style.display = 'none';
       }
 
-      if (confirmPassword.value !== password.value) {
+      if (confirmPassword.value !== password.value || !confirmPassword.value.trim()) {
         confirmPasswordError.style.display = 'block';
         valid = false;
       } else {
         confirmPasswordError.style.display = 'none';
       }
-     
 
-      if (!valid) {
-        e.preventDefault();
+      // If all fields valid → redirect to index.htm
+      if (valid) {
+        window.location.href = "index.htm";
       }
     });
   </script>
