@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Buy Now - Product</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans flex flex-col min-h-screen">
+
+  <!-- Navbar -->
+  <nav class="bg-indigo-600 p-4 text-white flex justify-between items-center">
+    <h1 class="text-xl font-bold">NearBuy Deals</h1>
+    <a href="index.htm" class="hover:underline">Back to Home</a>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="flex-grow">
+    <div class="max-w-6xl mx-auto mt-10 bg-white rounded-lg shadow-lg p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <!-- Product Image -->
+      <div class="flex justify-center items-center">
+        <img id="product-img" src="" alt="Product Image" class="rounded-lg shadow-md max-h-96 object-contain">
+      </div>
+
+      <!-- Product Details -->
+      <div>
+        <h2 id="product-name" class="text-2xl font-bold text-gray-900"></h2>
+        <p id="product-desc" class="text-gray-600 mt-2"></p>
+        
+        <div class="mt-4">
+          <span id="product-price" class="text-3xl font-semibold text-indigo-600"></span>
+        </div>
+
+        <div class="mt-6">
+          <p class="text-sm text-gray-500">Sold by <span id="product-shop" class="font-medium text-gray-800"></span></p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="mt-8 flex gap-4">
+          <button class="flex-1 bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
+            Buy Now
+          </button>
+          <button class="flex-1 bg-yellow-500 text-white py-3 rounded-lg font-semibold hover:bg-yellow-600 transition">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-6 mt-10">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+      <p>© 2025 NearBuy Deals. All rights reserved.</p>
+      <div class="flex space-x-4 mt-3 md:mt-0">
+        <a href="#" class="hover:text-white">Privacy Policy</a>
+        <a href="#" class="hover:text-white">Terms of Service</a>
+        <a href="#" class="hover:text-white">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script to Load Product Info -->
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+// Read product details directly from query string
+const name = params.get("name");
+const price = params.get("price");
+const desc = params.get("desc");
+const shop = params.get("shop");
+const img = params.get("img");
+
+// Render product details
+document.getElementById("product-name").textContent = name || "Product Name Not Provided";
+document.getElementById("product-price").textContent = price || "Price Not Available";
+document.getElementById("product-desc").textContent = desc || "No description available.";
+document.getElementById("product-shop").textContent = shop || "Unknown Seller";
+document.getElementById("product-img").src = img || "https://via.placeholder.com/400";
+
+    
+
+    document.getElementById("product-name").textContent = name;
+    document.getElementById("product-price").textContent = price;
+    document.getElementById("product-desc").textContent = desc;
+    document.getElementById("product-shop").textContent = shop;
+    document.getElementById("product-img").src = img;
+  </script>
+
+</body>
+</html>
